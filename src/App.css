@@ -1,18 +1,18 @@
-.wrapper {
+  .wrapper {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start; 
   }
   
   .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 1.5em;
+    padding-left: 1em; 
+    padding-right: 1em; 
+    padding-bottom: 1em;
     background-color: #424242;
     border-radius: 20px;
   }
@@ -42,27 +42,46 @@
 
   .button1 {
     padding: 0.5em;
-    padding-left: 1.1em;
-    padding-right: 1.1em;
+    padding-left: 5em;
+    padding-right: 5em;
     border-radius: 5px;
     margin-right: 0.5em;
     border: none;
     outline: none;
     transition: 0.4s ease-in-out;
     background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.742);
   }
-  
-  .button2 {
-    padding: 0.5em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: 0.4s ease-in-out;
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-    color: rgb(0, 0, 0);
-  }
-  * {box-sizing: border-box}
 
+  .tab {
+    display: flex;
+    flex-direction: column; 
+    gap: 0.5em; 
+}
+
+  .card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    margin-left: 0;
+    width: auto;
+    height: 100%;
+  }
+
+  .tabcontent {
+    display: none; 
+  }
+
+  .tabcontent.active {
+    display: block;
+  }
+
+  .tituloLista{
+    margin: auto; 
+    width: 100%;
+    height: 0vw;
+  }

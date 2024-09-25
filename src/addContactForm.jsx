@@ -52,8 +52,8 @@ function addContactForm({onAdd}){
     return(
         <div className="wrapper">
             <div className="tab">
-            <button class="tablinks" onClick={(e) => openOption(e, 'Add')}>Adicionar</button>
-            <button class="tablinks" onClick={(e) => openOption(e, 'View')}>Visualizar</button>
+                <button className="tablinks" onClick={(e) => openOption(e, 'Add')}>Adicionar</button>
+                <button className="tablinks" onClick={(e) => openOption(e, 'View')}>Visualizar</button>
             </div>
             <div className="card">
                 <div className="card2">
@@ -131,12 +131,10 @@ function addContactForm({onAdd}){
                         </div>
                         <br></br>
                             <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;Adicionar&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                            <button className="button2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
             </form>
             <div id="View" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
+                <h1 class="tituloLista">Lista de contatos</h1>
+            </div>  
         </div>
     </div>
 </div>

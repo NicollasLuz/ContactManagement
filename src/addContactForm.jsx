@@ -28,36 +28,11 @@ function addContactForm({onAdd}){
         )
     }
 
-    const openOption = (evt, optionName) => {
-        // Declare all variables
-        let i, tabcontent, tablinks;
-      
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-      
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-      
-        // Show the current tab, and add an "active" class to the link that opened the tab
-        document.getElementById(optionName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-
     return(
-        <div className="wrapper">
-            <div className="tab">
-                <button className="tablinks" onClick={(e) => openOption(e, 'Add')}>Adicionar</button>
-                <button className="tablinks" onClick={(e) => openOption(e, 'View')}>Visualizar</button>
-            </div>
+        <div className="wrapper"> 
             <div className="card">
                 <div className="card2">
-                    <form onSubmit={handleSubmit} id="Add" class="tabcontent">
+                    <form onSubmit={handleSubmit} id="Add" className="tabcontent">
                         <div className="field">
                             <svg
                                 viewBox="0 0 16 16"
@@ -86,10 +61,10 @@ function addContactForm({onAdd}){
                         <br></br>
                         <div className="field">
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="16" h
-                                eight="16" 
+                                width="16" 
+                                height="16" 
                                 fill="currentColor" 
-                                class="bi bi-telephone" 
+                                className="input-icon" 
                                 viewBox="0 0 16 16"
                             >
                                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
@@ -132,8 +107,8 @@ function addContactForm({onAdd}){
                         <br></br>
                             <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;Adicionar&nbsp;&nbsp;&nbsp;&nbsp;</button>
             </form>
-            <div id="View" class="tabcontent">
-                <h1 class="tituloLista">Lista de contatos</h1>
+            <div id="View" className="tabcontent">
+                <h1 className="tituloLista">Lista de contatos</h1>
             </div>  
         </div>
     </div>

@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+// ContactManager.js
+import React, { useState } from "react";
+import AddContactForm from "./addContactForm";
+import ContactList from "./ContactList";
 
-function ContactManager(){
+function ContactManager() {
     const [contacts, setContacts] = useState([]);
 
-    return(
+    const addContact = (contact) => {
+        setContacts([...contacts, contact]); // Adiciona o novo contato
+    };
+
+    return (
         <div>
             <h1>Gerenciamento de Contatos</h1>
-            {/*Adicionar os conponentes aqui*/}
+            <AddContactForm onAdd={addContact} contacts={contacts} /> {/* Passa a variável contacts como prop */}
+            <ContactList contacts={contacts} />
         </div>
-    )
+    );
 }
-export default ContactManager
+
+export default ContactManager;

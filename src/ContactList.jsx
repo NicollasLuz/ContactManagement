@@ -1,15 +1,49 @@
-// src/components/ContactList.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './Contacts.css';
 
-function ContactList({ contacts }) {
+function ContactList({ contacts, onEdit, onDelete }) {
+  const [editingId, setEditingId] = useState(null);
+
+  const handleEdit = (contact) => {
+    if (editingId === contact.id) {
+      // Save the edited contact
+      onEdit(contact);
+      setEditingId(null);
+    } else {
+      setEditingId(contact.id);
+    }
+  };
+
   return (
     <div id="View" className="tabcontent">
       <h1 className="TituloContatos">Contatos</h1>
       <ul className="contatosContainer">      
-        {contacts.map((contact, index) => (
-          <li key={index} className="contactItem">
-            <p>Nome: {contact.name} ⦿ Telefone: {contact.phone} ⦿ E-mail: {contact.email} </p>
+        {contacts.map((contact) => (
+          <li key={contact.id} className="contactItem">
+            {editingId === contact.id ? (
+              // Edit form
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                handleEdit({
+                  ...contact,
+                  name: e.target.name.value,
+                  phone: e.target.phone.value,
+                  email: e.target.email.value
+                });
+              }}>
+                <input name="name" defaultValue={contact.name} />
+                <input name="phone" defaultValue={contact.phone} />
+                <input name="email" defaultValue={contact.email} />
+                <button type="submit">Save</button>
+              </form>
+            ) : (
+              // Display contact
+              <>
+                <p>Nome: {contact.name} ⦿ Telefone: {contact.phone} ⦿ E-mail: {contact.email}</p>
+                <button onClick={() => setEditingId(contact.id)}>Edit</button>
+                <button onClick={() => onDelete(contact.id)}>Delete</button>
+              </>
+            )}
           </li>
         ))}
       </ul>

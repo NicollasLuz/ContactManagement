@@ -4,7 +4,6 @@ import ContactList from './ContactList';
 import Navbar from './Navbar';
 import  './App.css';
 
-
 function App() {
   const [contacts, setContacts] = useState([]);
   const [activeTab, setActiveTab] = useState('Add'); // Estado para a aba ativa

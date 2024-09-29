@@ -1,12 +1,11 @@
-// src/components/AddContactForm.jsx
 import React, { useState } from 'react';
 import ContactList from './ContactList';
 
 function AddContactForm() {
+  const [contacts, setContacts] = useState([]);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [contacts, setContacts] = useState([]);
 
   const handleChange = (inputType, e) => {
     if (inputType === 'name') {
@@ -20,19 +19,32 @@ function AddContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && phone && email) {
-      const newContact = { name, phone, email };
-      setContacts([...contacts, newContact]);
-      setName('');
-      setPhone('');
-      setEmail('');
-    }
+    const newContact = {
+      id: Date.now(),
+      name,
+      phone,
+      email
+    };
+    setContacts([...contacts, newContact]);
+    setName('');
+    setPhone('');
+    setEmail('');
+  };
+
+  const handleEdit = (updatedContact) => {
+    setContacts(contacts.map(contact => 
+      contact.id === updatedContact.id ? updatedContact : contact
+    ));
+  };
+
+  const handleDelete = (id) => {
+    setContacts(contacts.filter(contact => contact.id !== id));
   };
 
   return (
-    <div className="wrapper"> 
+    <div className="wrapper">
       <div className="card">
-        <form id="Add" className="tabcontent">
+      <form id="Add" className="tabcontent">
         <h2 className='Marinho'>Seja bem vindo!</h2>
           <div className="field">
             <svg
@@ -107,10 +119,13 @@ function AddContactForm() {
           </button>
         </form>
       </div>  
-      <ContactList contacts={contacts} />
+      <ContactList 
+        contacts={contacts} 
+        onEdit={handleEdit} 
+        onDelete={handleDelete} 
+      />
     </div>
-    
   );
 }
 
-export default AddContactForm;  
+export default AddContactForm;

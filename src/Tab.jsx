@@ -1,10 +1,13 @@
 import './Navbar.css';
-
-function Tab() {
+import AddContactForm from './AddContactForm';
+import ContactList from './ContactList';
+function Tab(contacts, setContacts) {
   return (
     <div className="tab">
       <a className="dropdown-item" onClick={(e) => openOption(e, 'Add')} href="#">Adicionar</a>
       <a className="dropdown-item" onClick={(e) => openOption(e, 'View')} href="#">Visualizar</a>
+      {openOption === 'View' && <ContactList contacts={contacts} />}
+      {openOption === 'Add' && <AddContactForm setContacts={setContacts} />}
     </div>
   );
 }

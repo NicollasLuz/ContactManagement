@@ -1,12 +1,10 @@
-/* src/Navbar.css */
- 
   .dropdown-item {
     display: block;
     width: 100%;
     padding: 10px 20px;
     clear: both;
     font-weight: 400;
-    color: #333;
+    color: #ffffff;
     text-align: inherit;
     white-space: nowrap;
     background-color: transparent;
@@ -24,7 +22,7 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #495057;
+    color: #ffffff;
     background-color: #ffffff00;
     background-clip: padding-box;
     border: 1px solid #ffffff00;
@@ -33,7 +31,7 @@
   }
   
   .form-control:focus {
-    color: #495057;
+    color: #ffffff;
     background-color:    #ffffff00;
     border-color: #80bdff;
     outline: 0;
@@ -66,4 +64,8 @@
     flex-flow: row wrap;
     align-items: center;
     margin-left: 10px;
+  }
+  
+  .form-control-mr-sm-2{
+    color: #fff;
   }

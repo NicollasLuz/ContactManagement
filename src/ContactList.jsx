@@ -40,8 +40,10 @@ function ContactList({ contacts, onEdit, onDelete }) {
               // Display contact
               <>
                 <p>Nome: {contact.name} ⦿ Telefone: {contact.phone} ⦿ E-mail: {contact.email}</p>
-                <button onClick={() => setEditingId(contact.id)}>Edit</button>
-                <button onClick={() => onDelete(contact.id)}>Delete</button>
+                <div className="buttonContainer"> 
+                <button onClick={() => setEditingId(contact.id) } className="ButtonEdit">Edit</button>
+                <button onClick={() => onDelete(contact.id)} className="ButtonDelete">Delete</button>
+                </div>
               </>
             )}
           </li>

@@ -8,23 +8,24 @@
 
   @keyframes BgAnimation {
     0% { 
-      background-image: url(https://t3.ftcdn.net/jpg/03/02/04/06/240_F_302040655_IEH9RyDlu7LL8YCLjgL1IskhrpOlmlSv.jpg);
+      background-color:rgba(255, 0, 0, 0.637);
     }
 
     30% { 
-      background-image: url(https://t4.ftcdn.net/jpg/04/61/47/03/240_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg);
+      background-color:rgba(255, 153, 0, 0.637);
     }
 
     60% { 
-      background-image: url(https://t3.ftcdn.net/jpg/03/57/83/08/240_F_357830890_Oa3BamPvEM1rjVJ72ZHKrOTKYKdVPIPd.jpg);
+      background-color:rgba(255, 238, 0, 0.637);
     }
 
     90% { 
-      background-image: url(https://t3.ftcdn.net/jpg/05/41/09/60/240_F_541096083_KJcorovXUvyIordnevCAaNEIAeHY258R.jpg);
+      background-color:rgba(0, 255, 213, 0.637);
     }
 
     100% { 
-      background-image: url(https://t3.ftcdn.net/jpg/03/02/04/06/240_F_302040655_IEH9RyDlu7LL8YCLjgL1IskhrpOlmlSv.jpg);
+      background-color:rgba(255, 0, 0, 0.637);
+
     }
   }
   
@@ -131,3 +132,4 @@
   .contact-list.active {
     display: block;
   }
+  

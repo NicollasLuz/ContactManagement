@@ -1,16 +1,15 @@
 // src/components/ContactList.jsx
 import React from 'react';
+import './Contacts.css';
 
 function ContactList({ contacts }) {
   return (
     <div id="View" className="tabcontent">
       <h1 className="TituloContatos">Contatos</h1>
-      <ul>
+      <ul className="contatosContainer">      
         {contacts.map((contact, index) => (
-          <li key={index}>
-            <p>Nome: {contact.name}</p>
-            <p>Telefone: {contact.phone}</p>
-            <p>E-mail: {contact.email}</p>
+          <li key={index} className="contactItem">
+            <p>Nome: {contact.name} ⦿ Telefone: {contact.phone} ⦿ E-mail: {contact.email} </p>
           </li>
         ))}
       </ul>

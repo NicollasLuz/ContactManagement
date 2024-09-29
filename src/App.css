@@ -101,7 +101,6 @@
     max-height: 500px;
     padding: 1px 24px;
     top: 25%;
-    filter: grayscale(0%);
   }
   
   .card:hover {

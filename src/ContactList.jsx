@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Contacts.css';
 
 function ContactList({ contacts, onEdit, onDelete }) {
@@ -52,5 +53,18 @@ function ContactList({ contacts, onEdit, onDelete }) {
     </div>
   );
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      name: PropTypes.string,
+      phone: PropTypes.string,
+      email: PropTypes.string,
+    })
+  ),
+  onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
+};
 
 export default ContactList;

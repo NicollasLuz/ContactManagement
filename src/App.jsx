@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import AddContactForm from './AddContactForm';
+import { useState } from 'react';
+import AddContactForm from './addContactForm';
 import ContactList from './ContactList';
-import Navbar from './Navbar';
+import Navbar from './NavBar';
 import  './App.css';
 
 function App() {

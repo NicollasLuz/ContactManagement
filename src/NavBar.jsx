@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Navbar.css';
 import Tab from './Tab';
 import ContactList from './ContactList'; // Assuming you have this component
@@ -22,5 +23,10 @@ function Navbar({ contacts, setContacts }) {
     </div>
   );
 }
+
+Navbar.propTypes = {
+  contacts: PropTypes.array,
+  setContacts: PropTypes.func,
+};
 
 export default Navbar;

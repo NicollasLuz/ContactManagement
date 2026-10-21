@@ -1,5 +1,5 @@
 import './Navbar.css';
-import AddContactForm from './AddContactForm';
+import AddContactForm from './addContactForm';
 import ContactList from './ContactList';
 function Tab(contacts, setContacts) {
   return (
